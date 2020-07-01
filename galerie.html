@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>LB02</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/mdb.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"><a href="index.html"> Home </a></div>
+    <nav class="nav-main">
+      <ul>
+        <li><a href="produkte.html" class="active">Video</a></li>
+        <li><a href="galerie.html">Bilder</a></li>
+        <li><a href="kontakt.html">Audio</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <section class="intro">
+      <h1>Bilder</h1>
+      <p>Die fünf eigenen Bilder.</p>
+    </section>
+
+    <section>
+      <!-- Container for the image gallery Code: w3schools.com-->
+      <article class="container">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+        <div class="mySlides">
+          <img src="img/pic/1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/pic/2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/pic/3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/pic/6.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <img src="img/pic/5.jpg" style="width:100%">
+        </div>
+
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="http://instagram.com" target="_blank"> <i class="fab fa-instagram-square"></i> </a>
+    <a href="http://facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i> </a>
+    <a href="http://twitter.com" target="_blank"> <i class="fab fa-twitter-square"></i> </a>
+  </footer>
+
+
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script>
+
+</body>
+
+</html>
